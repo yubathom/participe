@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import consultas from '../../static/consultas.json';
+import consultas from '../../../static/consultas.json';
 
 	export default {
 		name: 'Home',
@@ -53,6 +53,11 @@ import consultas from '../../static/consultas.json';
 			return {
 				consultas: consultas.slice().reverse(),				
 			}
+		},
+		computed: {
+			fun() {
+				return this.$store.state.olar
+			},
 		},
 		mounted() {
 			let listaProjetos = new List('listaProjetos', {
